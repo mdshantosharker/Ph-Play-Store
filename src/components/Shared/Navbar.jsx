@@ -1,31 +1,14 @@
 import React from "react";
 import logoImage from "../../assets/logo.png";
 import github from "../../assets/Vector.png";
-import { NavLink } from "react-router";
+
+import MyNavLink from "./MyNavLink";
 const Navbar = () => {
   const links = (
     <div className="flex gap-10 items-center">
-      <NavLink
-        to={"/"}
-        className={({ isActive }) => `font-bold
-          ${isActive ? "border-b-2 border-purple-600 text-purple-600 " : ""}`}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to={"/apps"}
-        className={({ isActive }) => `font-bold
-          ${isActive ? "border-b-2 border-purple-600 text-purple-600 " : ""}`}
-      >
-        Apps
-      </NavLink>
-      <NavLink
-        to={"/installedApps"}
-        className={({ isActive }) => `font-bold
-          ${isActive ? "border-b-2 border-purple-600 text-purple-600 " : ""}`}
-      >
-        Installation
-      </NavLink>
+      <MyNavLink to={"/"}>Home</MyNavLink>
+      <MyNavLink to={"/apps"}>Apps</MyNavLink>
+      <MyNavLink to={"/installedApps"}>Installation</MyNavLink>
     </div>
   );
   return (
@@ -57,9 +40,11 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             <img className="w-8 h-8" src={logoImage} alt="" />
-            <a className="btn btn-ghost text-xl">HERO.IO</a>
+            <a className=" text-xl font-bold bg-linear-to-l from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent">
+              HERO.IO
+            </a>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import Banner from "../../components/homepage/Banner";
+import Stats from "../../components/homepage/Stats";
+import TrendingApps from "../../components/homepage/TrendingApps";
 
 const HomePage = () => {
-    return (
-        <div>
-            <h1>this is home page</h1>
-        </div>
-    );
+  return (
+    <>
+      <Banner />
+      <Stats />
+      <TrendingApps />
+    </>
+  );
 };
 
 export default HomePage;
