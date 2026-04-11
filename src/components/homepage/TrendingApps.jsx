@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AppsCard from "../../ui/AppsCard/AppsCard";
 import { FadeLoader } from "react-spinners";
+import { Link } from "react-router";
 
 // const fetchApps = async () => {
 //   const res = await fetch("/data.json");
@@ -11,26 +12,28 @@ import { FadeLoader } from "react-spinners";
 const TrendingApps = () => {
   // const apps = use(appsPromise);
   // console.log(apps);
+  // const [button, setButton] = useState(false);extra implement part
 
   const [apps, setApps] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/data.json");
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
 
       setTimeout(() => {
         setApps(data);
         setLoading(false);
-      }, 2000);
+      }, 1500);
     };
     fetchData();
   }, []);
 
-  console.log(apps);
-  console.log(loading);
+  // console.log(apps);
+  // console.log(loading);
 
   return (
     <div className="bg-gray-200">
@@ -47,7 +50,17 @@ const TrendingApps = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
-            {apps.map((app) => {
+            {/* extra implement part */}
+            {/* {
+              button && apps.map((app) => {
+              return (
+                <AppsCard key={app.id} app={app}>
+                  {app.title}
+                </AppsCard>
+              );
+            })} */}
+
+            {apps.slice(0, 9).map((app) => {
               return (
                 <AppsCard key={app.id} app={app}>
                   {app.title}
@@ -56,6 +69,30 @@ const TrendingApps = () => {
             })}
           </div>
         )}
+
+        <div className="flex justify-center mt-10">
+          <Link to={"/apps"}>
+            <button className="btn bg-linear-to-l from-[#9F62F2] to-[#632EE3] text-white">
+              View All
+            </button>
+          </Link>
+        </div>
+
+        {/* ---------------------------------------------------------- */}
+        {/* extra implement part */}
+
+        {/* <div className="flex justify-center mt-10">
+        
+         <button
+            onClick={() => setButton(true)}
+            className={`btn bg-linear-to-l from-[#9F62F2] to-[#632EE3] text-white ${button && "hidden"}`}
+          >
+            View All
+          </button> 
+          
+        </div> */}
+
+        {/* --------------------------------------------- */}
       </div>
     </div>
   );
