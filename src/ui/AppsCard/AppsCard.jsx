@@ -1,10 +1,11 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
+import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
   return (
-    <div className="card bg-base-100  shadow-2xl ">
+    <Link to={`/apps/${app.id}`} className="card bg-base-100  shadow-2xl ">
       <figure>
         <img className=" w-52 mt-10 rounded-2xl" src={app.image} alt="Shoes" />
       </figure>
@@ -21,7 +22,7 @@ const AppsCard = ({ app }) => {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

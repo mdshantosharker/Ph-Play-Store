@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FadeLoader } from "react-spinners";
 import AppsCard from "../../ui/AppsCard/AppsCard";
+import useApps from "../../hooks/useApps";
 
 const Apps = () => {
-  const [apps, setApps] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
+  const { apps, loading } = useApps();
+  // console.log({obj});
+  // const [apps, setApps] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch("/data.json");
+  //     const data = await res.json();
 
-      //   setTimeout(() => {
-      setApps(data);
-      setLoading(false);
-      //   },1500);
-    };
-    fetchData();
-  }, []);
-  console.log(apps);
+  //     //   setTimeout(() => {
+  //     setApps(data);
+  //     setLoading(false);
+  //     //   },1500);
+  //   };
+  //   fetchData();
+  // }, []);
+  // console.log(apps);
 
   return (
     <div className="bg-gray-200">

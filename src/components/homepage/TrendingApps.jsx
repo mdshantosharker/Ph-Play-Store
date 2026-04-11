@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AppsCard from "../../ui/AppsCard/AppsCard";
 import { FadeLoader } from "react-spinners";
 import { Link } from "react-router";
+import useApps from "../../hooks/useApps";
 
 // const fetchApps = async () => {
 //   const res = await fetch("/data.json");
@@ -13,27 +14,7 @@ const TrendingApps = () => {
   // const apps = use(appsPromise);
   // console.log(apps);
   // const [button, setButton] = useState(false);extra implement part
-
-  const [apps, setApps] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      // console.log(data);
-
-      setTimeout(() => {
-        setApps(data);
-        setLoading(false);
-      }, 1500);
-    };
-    fetchData();
-  }, []);
-
-  // console.log(apps);
-  // console.log(loading);
+  const { apps, loading } = useApps();
 
   return (
     <div className="bg-gray-200">
