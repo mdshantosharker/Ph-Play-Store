@@ -31,9 +31,9 @@ const AppDetails = () => {
     <>
       <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200 p-6">
         <div className="container mx-auto max-w-md">
-          {/* Card */}
+        
           <div className="bg-white rounded-3xl shadow-2xl p-8 space-y-6 text-center hover:scale-[1.02] transition duration-300">
-            {/* Image */}
+          
             <div className="flex justify-center">
               <img
                 src={expectedApp.image}
@@ -42,12 +42,12 @@ const AppDetails = () => {
               />
             </div>
 
-            {/* Title */}
+           
             <h2 className="font-bold text-3xl text-gray-800">
               {expectedApp.title}
             </h2>
 
-            {/* Developer */}
+            
             <p className="text-gray-500">
               Developed by{" "}
               <span className="font-semibold text-purple-600">
@@ -55,14 +55,14 @@ const AppDetails = () => {
               </span>
             </p>
 
-            {/* Info badges (optional style boost) */}
+           
             <div className="flex justify-center gap-3 text-sm text-gray-500">
               <span className="bg-gray-100 px-3 py-1 rounded-full">Free</span>
               <span className="bg-gray-100 px-3 py-1 rounded-full">App</span>
               <span className="bg-gray-100 px-3 py-1 rounded-full">2026</span>
             </div>
 
-            {/* Button */}
+          
             <button
               onClick={() => handleInstall()}
               className="w-full py-3 bg-linear-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition duration-300"

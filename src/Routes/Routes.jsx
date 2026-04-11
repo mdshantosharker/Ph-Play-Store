@@ -5,6 +5,7 @@ import HomePage from "../Pages/Homepage/HomePage";
 import Apps from "../Pages/Apps/Apps";
 import InstalledApps from "../Pages/InstalledApps/InstalledApps";
 import AppDetails from "../Pages/AppDetails/AppDetails";
+import DashBoard from "../Pages/dashboard/DashBoard";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
       {
         path: "/installedApps",
         element: <InstalledApps></InstalledApps>,
+      },
+      {
+        path: "/dashboard",
+        loader: () => fetch("/data.json"),
+        element: <DashBoard></DashBoard>,
       },
     ],
   },

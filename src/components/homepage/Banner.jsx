@@ -31,7 +31,7 @@ const Banner = () => {
       </div>
 
       <div className="flex justify-center mt-10">
-        <img className="w-[50%]" src={hero} alt="" />
+        <img className="md:w-[50%] w-[90%]" src={hero} alt="" />
       </div>
     </div>
   );

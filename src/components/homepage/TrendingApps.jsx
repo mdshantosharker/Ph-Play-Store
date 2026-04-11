@@ -41,7 +41,7 @@ const TrendingApps = () => {
               );
             })} */}
 
-            {apps.slice(0, 9).map((app) => {
+            {apps.slice(0, 8).map((app) => {
               return (
                 <AppsCard key={app.id} app={app}>
                   {app.title}

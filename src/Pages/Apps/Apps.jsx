@@ -23,15 +23,15 @@ const Apps = () => {
   // console.log(apps);
 
   return (
-    <div className="bg-gray-200">
-      <div className="container mx-auto  py-10">
+    <div className="bg-gray-200 ">
+      <div className="container w-11/12 mx-auto  py-10">
         <div className="text-center">
           <h1 className="font-bold text-6xl">Our All Applications</h1>
           <p className="text-[#627382] mb-20 mt-4">
             Explore All Apps on the Market developed by us. We code for Millions
           </p>
         </div>
-        <div className="flex justify-between items-center mb-14">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-14 gap-10">
           <h2 className="text-2xl font-bold ">({apps.length})Apps Found</h2>
 
           <label className="input">
@@ -59,7 +59,7 @@ const Apps = () => {
             <FadeLoader color="#862fe8" />
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-10">
             {apps.map((app) => (
               <AppsCard key={app.id} app={app}>
                 {app.title}
